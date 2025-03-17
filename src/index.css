@@ -1,0 +1,83 @@
+/* Estilo global para el cuerpo */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f4f4f4;
+  overflow-y: scroll;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Estilo para el contenedor de videos */
+.certificado-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Cada video tendrá su propio estilo */
+.certificado {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+}
+
+
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
+
+.certificado-info {
+  padding: 15px;
+  background-color: #fafafa;
+}
+
+.certificado-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  font-family: monospace;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.video-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+/* Hacer el diseño responsive para pantallas más pequeñas */
+@media screen and (max-width: 1024px) {
+  .certificado-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .certificado-container {
+      grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+  }
+}
+
+p::first-letter {
+  text-transform: capitalize;
+}
