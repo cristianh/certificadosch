@@ -12,17 +12,17 @@ export const Certificados = () => {
     //const baseUrl = "https://obvious-jacinda-devpcasa-e80207c6.koyeb.app/"
     console.log(baseUrl)
     const [certificados, setCertificados] = useState([])
-    const [filterText, setFilterText] = useState('qa')
+    const [filterText, setFilterText] = useState('')
 
     //const inputRef = useRef(null);
 
     const dataCertificacos = () => {
         fetch(baseUrl)
             .then(response => response.json())
-            .then(data => {
+            .then(dataApi => {
+                const { data } = dataApi
                 setCertificados(data)
             })
-
     }
 
     useEffect(() => {
