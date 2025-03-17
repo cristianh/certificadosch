@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unknown-property */
 import { useEffect, useState } from "react"
 import { Certificado } from "./Certificado"
-import { useRef } from "react"
+//import { useRef } from "react"
 import { Button } from "./Button";
 
 
@@ -14,7 +14,7 @@ export const Certificados = () => {
     const [certificados, setCertificados] = useState([])
     const [filterText, setFilterText] = useState('qa')
 
-    const inputRef = useRef(null);
+    //const inputRef = useRef(null);
 
     const dataCertificacos = () => {
         fetch(baseUrl)
@@ -30,10 +30,10 @@ export const Certificados = () => {
         dataCertificacos()
     }, [])
 
-    const onHandleFilter = (event) => {
+    /*const onHandleFilter = (event) => {
         event.preventDefault()
         setFilterText(inputRef.current.value)
-    }
+    }*/
 
     const filteredCertificados = certificados.filter(certificado =>
         certificado.nombre.toLowerCase().includes(filterText.toLowerCase())
