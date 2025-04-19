@@ -8,8 +8,8 @@ import { Button } from "./Button";
 
 export const Certificados = () => {
 
-    const baseUrl = process.env.NODE_ENV == 'prod' ? "https://traditional-zonnya-devpcasa-280804bb.koyeb.app/" : "http://127.0.0.1:5001";
-    //const baseUrl = "https://obvious-jacinda-devpcasa-e80207c6.koyeb.app/"
+    //const baseUrl = process.env.NODE_ENV == 'prod' ? "https://traditional-zonnya-devpcasa-280804bb.koyeb.app/" : "http://127.0.0.1:5001";
+    const baseUrl = "https://traditional-zonnya-devpcasa-280804bb.koyeb.app/"
     console.log(baseUrl)
     const [certificados, setCertificados] = useState([])
     const [filterText, setFilterText] = useState('')
@@ -42,7 +42,8 @@ export const Certificados = () => {
 
     return (
         <>
-            <h2>Certificados</h2>
+
+            <h1>Certificados</h1>
             <hr />
             {
                 /*<select onChange={onHandleFilter} ref={inputRef} name="categorias" id="categorias">
@@ -51,21 +52,22 @@ export const Certificados = () => {
                     <option value="desa">Desarrollo</option>
                 </select>*/
             }
+            <div className="container-parent">
+                <div className="buttonsMenu">
+                    <Button onFilter={setFilterText} textos={['', 'qa', 'desarrollo']} />
 
-            <Button onFilter={setFilterText} textos={['', 'qa', 'desa']} />
-
-
-            <hr />
-            <div className="container">
-                <div className="certificado-container">
-                    {
-                        filteredCertificados.map((certificado) => (
-                            <Certificado key={certificado.nombre} {...certificado} />
-                        ))
-                    }
+                </div>
+                <hr />
+                <div className="container">
+                    <div className="certificado-container">
+                        {
+                            filteredCertificados.map((certificado) => (
+                                <Certificado key={certificado.nombre} {...certificado} />
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
-
         </>
     )
 }
