@@ -104,12 +104,19 @@ img {
   .certificado-container {
       grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
   }
+  .container-proyectos {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+}
 }
 
 @media screen and (max-width: 768px) {
   .certificado-container {
       grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
   }
+
+  .container-proyectos {
+    grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+}
 }
 
 p::first-letter {
